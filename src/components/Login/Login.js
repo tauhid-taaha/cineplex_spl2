@@ -1,24 +1,29 @@
 // Login.js
 
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom'; // Import Link and useNavigate
-import './Login.css'; // Import CSS file for styling
+import { Link } from 'react-router-dom';
+import './Login.css'; 
 
 const Login = () => {
-    // State for managing username, password, and login status
-    const [username, setUsername] = useState('');
+    
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const navigate = useNavigate(); // Hook to navigate to other pages
+    const [loginError, setLoginError] = useState(false);
 
-    // Function to handle form submission
+    // Function  form submission
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Add logic for authentication or other actions here
-        console.log('Username:', username);
-        console.log('Password:', password);
-        // Simulate successful login
-        // Navigate to LoginSuccessful page
-        navigate('/login-successful');
+        // Retrieve stored sign-up information from local storage
+        const signupInfo = JSON.parse(localStorage.getItem('signupInfo')) || [];
+        
+        const foundUser = signupInfo.find(user => user.email === email && user.password === password);
+        if (foundUser) {
+            
+            window.location.href = "/login-successful";
+        } else {
+            
+            setLoginError(true);
+        }
     };
 
     return (
@@ -27,10 +32,10 @@ const Login = () => {
                 <h2>Login</h2>
                 <div className="form-group">
                     <input
-                        type="text"
-                        placeholder="Username"
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
+                        type="email"
+                        placeholder="Email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
                         required
                     />
                 </div>
@@ -45,7 +50,8 @@ const Login = () => {
                 </div>
                 <button type="submit" className="login-button">Login</button>
             </form>
-            <p>Don't have an account? <Link to="/signup">Sign Up</Link></p> {/* Link to Sign Up page */}
+            {loginError && <p className="login-error">Login unsuccessful. Please check your email and password.</p>}
+            <p>Don't have an account? <Link to="/signup">Sign Up</Link></p>
         </div>
     );
 };

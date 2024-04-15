@@ -2,22 +2,25 @@
 
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom'; // Import Link component
-import './Signup.css'; // Import CSS file for styling
+import './Signup.css'; 
 
 const Signup = () => {
-    // State for managing form fields
+    //  form fields
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    // Function to handle form submission
+    //  handle form submission
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Add logic for registration or other actions here
-        console.log('Name:', name);
-        console.log('Email:', email);
-        console.log('Password:', password);
-        // Redirect to SignUpSuccessful page after successful registration
+        // Retrieve existing sign-up information from local storage
+        const existingSignupInfo = JSON.parse(localStorage.getItem('signupInfo')) || [];
+        // Add new signup information to array
+        const newSignupInfo = [...existingSignupInfo, { name, email, password }];
+        // Store updated sign-up information array in local storage
+        localStorage.setItem('signupInfo', JSON.stringify(newSignupInfo));
+       
+        window.location.href = "/signup-successful";
     };
 
     return (
@@ -52,9 +55,7 @@ const Signup = () => {
                     />
                 </div>
                 {/* Link to SignUpSuccessful page */}
-                <Link to="/signup-successful">
-                    <button type="submit" className="signup-button">Sign Up</button>
-                </Link>
+                <button type="submit" className="signup-button">Sign Up</button>
             </form>
             <p>Already have an account? <Link to="/login">Log in</Link></p>
         </div>
