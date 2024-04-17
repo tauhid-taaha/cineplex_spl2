@@ -3,7 +3,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Login.css'; 
+<<<<<<< HEAD
 //import login from './loginvideo.mp4';
+=======
+import login from './loginvideo.mp4';
+>>>>>>> 7a9169a844d865b21d993dff7eac29908e98315c
 const Login = () => {
     
     const [email, setEmail] = useState('');
@@ -29,7 +33,14 @@ const Login = () => {
     return (
         <div className='body-container'>
         <div className="login-container">
+<<<<<<< HEAD
              
+=======
+             <video autoPlay muted loop className="background-video"> {/* Add the video element */}
+                <source src={login} type="video/mp4" />
+                Your browser does not support the video tag.
+            </video>
+>>>>>>> 7a9169a844d865b21d993dff7eac29908e98315c
             <form onSubmit={handleSubmit} className="login-form">
                 <h2>Login</h2>
                 <div className="form-group">

@@ -25,7 +25,11 @@ const Signup = () => {
     };
 
     return (
+<<<<<<< HEAD
         <div className='body-container'>
+=======
+        
+>>>>>>> 7a9169a844d865b21d993dff7eac29908e98315c
         <div className="signup-container">
             <h2>Sign Up</h2>
             <form onSubmit={handleSubmit} className="signup-form">
