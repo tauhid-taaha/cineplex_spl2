@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Login.css'; 
-
+//import login from './loginvideo.mp4';
 const Login = () => {
     
     const [email, setEmail] = useState('');
@@ -27,7 +27,9 @@ const Login = () => {
     };
 
     return (
+        <div className='body-container'>
         <div className="login-container">
+             
             <form onSubmit={handleSubmit} className="login-form">
                 <h2>Login</h2>
                 <div className="form-group">
@@ -52,6 +54,7 @@ const Login = () => {
             </form>
             {loginError && <p className="login-error">Login unsuccessful. Please check your email and password.</p>}
             <p>Don't have an account? <Link to="/signup">Sign Up</Link></p>
+        </div>
         </div>
     );
 };

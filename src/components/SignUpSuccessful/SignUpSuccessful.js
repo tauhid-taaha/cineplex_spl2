@@ -6,10 +6,11 @@ import './SignUpSuccessful.css'; // Import CSS file for styling
 
 const SignUpSuccessful = () => {
     return (
+        <div className='container'>
         <div className="signup-successful-container">
             <h2>Sign Up Successful</h2>
             <Link to="/login">Login</Link> {/* Link to Login page */}
-        </div>
+        </div></div>
     );
 };
 

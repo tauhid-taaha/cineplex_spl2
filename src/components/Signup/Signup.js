@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom'; // Import Link component
 import './Signup.css'; 
 
+
 const Signup = () => {
     //  form fields
     const [name, setName] = useState('');
@@ -24,6 +25,7 @@ const Signup = () => {
     };
 
     return (
+        <div className='body-container'>
         <div className="signup-container">
             <h2>Sign Up</h2>
             <form onSubmit={handleSubmit} className="signup-form">
@@ -58,6 +60,7 @@ const Signup = () => {
                 <button type="submit" className="signup-button">Sign Up</button>
             </form>
             <p>Already have an account? <Link to="/login">Log in</Link></p>
+        </div>
         </div>
     );
 };

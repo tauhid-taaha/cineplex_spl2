@@ -1,4 +1,7 @@
 /* SignUpSuccessful.css */
+.container{
+    background-color: black;
+}
 
 .signup-successful-container {
     text-align: center;

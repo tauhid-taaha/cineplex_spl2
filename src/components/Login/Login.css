@@ -1,4 +1,7 @@
 /* Login.css */
+.body-container{
+    background-color: black;
+}
 
 .login-container {
     max-width: 400px;
@@ -18,7 +21,7 @@
     margin-bottom: 15px;
 }
 
-input[type="text"],
+input[type="email"],
 input[type="password"] {
     width: 100%;
     padding: 10px;

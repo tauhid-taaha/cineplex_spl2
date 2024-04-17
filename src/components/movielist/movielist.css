@@ -1,10 +1,12 @@
 .movie__list {
     padding: 0 3rem 3rem 3rem;
+    background-color: black;
 }
 
 .list__title {
+    color: white;
 font-size: 1.75rem;
-margin:  2.5rem;
+/* margin:  2.5rem; */
 }
 
 .list__cards {

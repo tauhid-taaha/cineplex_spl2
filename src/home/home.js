@@ -17,7 +17,7 @@ const Home = () => {
     }, [])
 
     return (
-        <>
+        <div className="body-con">
             <div className="poster">
                 <Carousel
                     showThumbs={false}
@@ -52,7 +52,7 @@ const Home = () => {
                 <MovieList/>
                 
             </div>
-        </>
+        </div>
     )
 }
 

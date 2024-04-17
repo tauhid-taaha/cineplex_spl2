@@ -1,4 +1,7 @@
 /* LoginSuccessful.css */
+.container{
+    background-color: black;
+}
 
 .login-successful-container {
     width: 100%;
