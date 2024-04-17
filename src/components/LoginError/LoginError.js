@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom'; // Import Link component
-import './LoginError.css'; 
+import './LoginError.css'; // Import CSS file for styling
 
 const LoginError = () => {
     return (

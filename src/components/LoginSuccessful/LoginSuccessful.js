@@ -1,3 +1,4 @@
+
 // LoginSuccessful.js
 
 import React from 'react';
@@ -8,10 +9,9 @@ const LoginSuccessful = () => {
     return (
         <div className="login-successful-container">
             <h2>Login Successful</h2>
-            <Link to="/home">Go to Home</Link> {/* Update the 'to' attribute to '/home' */}
+            <Link to="/">Go to Home</Link>
         </div>
     );
 };
 
 export default LoginSuccessful;
-
