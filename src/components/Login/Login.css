@@ -1,30 +1,62 @@
-/* Login.css */
+/* styles.css */
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevent scrolling */
+}
+
+.background-video-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.background-video {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    filter: brightness(70%);
+}
 
 .login-container {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    padding: 40px;
+    background-color: rgba(0, 0, 0, 0.7);
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
 .login-form {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    color: #fff;
 }
 
 .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    width: 100%;
 }
 
 input[type="text"],
-input[type="password"] {
+input[type="password"],
+input[type="email"] {
     width: 100%;
-    padding: 10px;
+    padding: 15px;
     border: none;
     border-radius: 4px;
-    background-color: #333;
+    background-color: rgba(255, 255, 255, 0.1); /* Adjust the input field background color and opacity */
     color: #fff;
     font-size: 16px;
 }
@@ -34,27 +66,38 @@ button.login-button {
     color: #fff;
     border: none;
     border-radius: 4px;
-    padding: 12px 20px;
+    padding: 10px 20px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 18px;
+    width: 50%; /* Adjust the width of the button */
+    max-width: 200px; /* Limit the maximum width of the button */
+    align-self: center; /* Center the button horizontally */
+    margin-left: 10px;
 }
 
 button.login-button:hover {
     background-color: #ff0a16;
 }
 
+.login-error {
+    color: #ff3333;
+    font-size: 14px;
+}
+
 p {
-    margin-top: 15px;
+    margin-top: 20px;
     text-align: center;
     color: #fff;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 a {
     color: #fff;
-    text-decoration: underline;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 a:hover {
     color: #ff0a16;
 }
+
